@@ -1,3 +1,5 @@
+import Day03.Day03Solution
+import Day03.Day03SolutionPart2
 import adventofcode2020.Day02.Day02SolutionPart2
 
 /*
@@ -7,5 +9,5 @@ import adventofcode2020.Day02.Day02SolutionPart2
 
 fun main() {
     println("Happy Advent of Code!")
-    Day02SolutionPart2()
+    Day03SolutionPart2()
 }
