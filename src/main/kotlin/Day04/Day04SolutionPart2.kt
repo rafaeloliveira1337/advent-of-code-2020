@@ -6,11 +6,11 @@ fun Day04SolutionPart2() {
     println("Day 04 Solution - Part 2")
 
     val filePath = "${System.getProperty("user.dir")}/src/main/kotlin/Day04/Day04Input.txt"
-    val input = File(filePath).readText(Charsets.UTF_8)
+    val input = File(filePath).readText(Charsets.UTF_8) // load entire file
 
     val validPassports =
         input
-            .split(Regex("(?m)^\\s*$")) // split entire content on blank lines
+            .split(Regex("(?m)^\\s*$")) // split on blank lines
             .map {
                 it.replace("\n", " ") // remove line breaks inside the passport data
                     .trim() // trim leading and trailing spaces

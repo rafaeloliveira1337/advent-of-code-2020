@@ -1,5 +1,4 @@
-import Day04.Day04Solution
-import Day04.Day04SolutionPart2
+import Day05.Day05SolutionPart2
 
 /*
  * Solutions For Advent of Code 2020
@@ -8,5 +7,5 @@ import Day04.Day04SolutionPart2
 
 fun main() {
     println("Happy Advent of Code!")
-    Day04SolutionPart2()
+    Day05SolutionPart2()
 }
