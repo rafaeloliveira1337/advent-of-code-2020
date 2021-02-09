@@ -643,7 +643,7 @@ class Day08Input {
             "nop -245",
             "acc +26",
             "acc +15",
-            "jmp +1",
+            "jmp +1"
         )
     }
 }
