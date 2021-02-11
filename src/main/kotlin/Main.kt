@@ -8,5 +8,5 @@ import Day11.Day11SolutionPart2
 
 fun main() {
     println("Happy Advent of Code!")
-    Day11SolutionPart2()
+    Day11Solution()
 }

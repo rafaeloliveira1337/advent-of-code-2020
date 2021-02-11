@@ -58,27 +58,21 @@ fun getNextIterationPart1(matrix: Array<CharArray>): Pair<Array<CharArray>, Bool
         for (j in 0..rightWall) {
             var takenSeats = 0
             val currentSeatState = matrix[i][j]
+            if (currentSeatState == '.') continue
 
-            if (i-1 >= ceiling) {
-                if (matrix[i-1][j] == '#') takenSeats++
+            for(delta_i in -1..1) {
+                for (delta_j in -1..1) {
+                    if (delta_i == 0 && delta_j == 0) continue
 
-                if (j-1 >= leftWall && matrix[i-1][j-1] == '#') takenSeats++
+                    val adjacentI = i + delta_i
+                    val adjacentJ = j + delta_j
 
-                if (j+1 <= rightWall && matrix[i-1][j+1] == '#') takenSeats++
-            }
-
-            if (j-1 >= leftWall && matrix[i][j-1] == '#') takenSeats++
-
-            if (i+1 <= floor) {
-                if (j-1 >= leftWall && matrix[i+1][j-1] == '#') takenSeats++
-
-                if (matrix[i+1][j] == '#') takenSeats++
-            }
-
-            if (j+1 <= rightWall) {
-                if (i+1 <= floor && matrix[i+1][j+1] == '#') takenSeats++
-
-                if (matrix[i][j+1] == '#') takenSeats++
+                    if ((adjacentI >= ceiling && adjacentI <= floor) && (adjacentJ >= leftWall && adjacentJ <= rightWall)
+                        && matrix[adjacentI][adjacentJ] == '#'
+                    ) {
+                        takenSeats++
+                    }
+                }
             }
 
             val newSeatState = when {
@@ -118,7 +112,6 @@ fun getNextIterationPart2(matrix: Array<CharArray>): Pair<Array<CharArray>, Bool
         for (j in 0..rightWall) {
             var visibleTakenSeats = 0
             val currentSeatState = matrix[i][j]
-
             if (currentSeatState == '.') continue
 
             visibleTakenSeats += countTakenSeatInDirection(i, j, -1, 0,
