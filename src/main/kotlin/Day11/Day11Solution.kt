@@ -64,7 +64,7 @@ fun Day11SolutionPart2() {
 }
 
 // Part 1
-fun getNextIterationPart1(matrix: Array<CharArray>): Pair<Array<CharArray>, Boolean> {
+private fun getNextIterationPart1(matrix: Array<CharArray>): Pair<Array<CharArray>, Boolean> {
     val nextIteration: Array<CharArray> = matrix.copy()
     val leftWall = 0
     val ceiling = 0
@@ -123,7 +123,7 @@ fun getNextIterationPart1(matrix: Array<CharArray>): Pair<Array<CharArray>, Bool
 }
 
 // Part 1 Alternative
-fun getNextIterationPart1Alternative(matrix: Array<CharArray>): Pair<Array<CharArray>, Boolean> {
+private fun getNextIterationPart1Alternative(matrix: Array<CharArray>): Pair<Array<CharArray>, Boolean> {
     val leftWall = 0
     val ceiling = 0
     val rightWall = matrix[0].size - 1
@@ -171,7 +171,7 @@ fun getNextIterationPart1Alternative(matrix: Array<CharArray>): Pair<Array<CharA
 }
 
 // Part 2
-fun getNextIterationPart2(matrix: Array<CharArray>): Pair<Array<CharArray>, Boolean> {
+private fun getNextIterationPart2(matrix: Array<CharArray>): Pair<Array<CharArray>, Boolean> {
     val nextIteration: Array<CharArray> = matrix.copy()
     val leftWall = 0
     val ceiling = 0
@@ -249,7 +249,7 @@ fun getNextIterationPart2(matrix: Array<CharArray>): Pair<Array<CharArray>, Bool
     return Pair(nextIteration, seatsChanged)
 }
 
-fun countTakenSeatInDirection(currentI: Int,
+private fun countTakenSeatInDirection(currentI: Int,
                               currentJ: Int,
                               iIncrement: Int,
                               jIncrement: Int,
